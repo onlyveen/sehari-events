@@ -1,0 +1,26 @@
+{
+  "name": "atoj",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint"
+  },
+  "dependencies": {
+    "airtable": "^0.12.1",
+    "lodash": "^4.17.21",
+    "next": "^13.4.7",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "react-router": "^6.14.1",
+    "react-slick": "^0.29.0",
+    "sass": "^1.63.6",
+    "scss": "^0.2.4"
+  },
+  "devDependencies": {
+    "@types/react": "18.2.14",
+    "typescript": "5.1.6"
+  }
+}

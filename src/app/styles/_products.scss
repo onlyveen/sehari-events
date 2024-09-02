@@ -1,0 +1,127 @@
+.products {
+  padding: 150px 0;
+  @include responsive(phone) {
+    padding: 50px 15px;
+  }
+  .container1 {
+    h3 {
+      font-family: var(--font-heading);
+      margin-bottom: 24px;
+      color: #fff;
+      font-size: 64px;
+      background: var(--color-grad);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+    .prods {
+      display: flex;
+      gap: 32px;
+      @include responsive(phone) {
+        flex-wrap: wrap;
+        gap: 16px;
+      }
+      .prodItem {
+        display: flex;
+        flex-direction: column;
+        @include responsive(phone) {
+          flex: 0 0 calc(50% - 16px / 2);
+          max-width: calc(50% - 16px / 2);
+        }
+      }
+      p {
+        font-size: 18px;
+        background: var(--color-prime);
+        padding: 16px 32px;
+        font-weight: 500;
+        height: 64px;
+        display: flex;
+        align-items: center;
+      }
+      > div {
+        flex: 1 0 0;
+        @include responsive(phone) {
+          flex: 0 0 calc(50% - 16px / 2);
+          max-width: calc(50% - 16px / 2);
+        }
+      }
+    }
+  }
+
+  .container2 {
+    border: solid 1px var(--color-white);
+    color: var(--color-white);
+    margin-top: 100px;
+    @include responsive(phone) {
+      padding: 0;
+    }
+    h3 {
+      font-size: 28px;
+      font-weight: 500;
+      line-height: 1.6;
+      padding: 32px;
+      border-bottom: solid 1px var(--color-white);
+      @include responsive(phone) {
+        font-size: 24px;
+        font-weight: 600;
+        background: var(--color-grad);
+        color: var(--color-dark);
+      }
+    }
+    .cols {
+      display: flex;
+      @include responsive(phone) {
+        flex-direction: column;
+      }
+      .color {
+        color: var(--color-white);
+        padding: 4px 11px;
+        background: var(--color-second);
+        font-size: 18px;
+        border-radius: 4px;
+      }
+      .c {
+        display: flex;
+        flex-direction: column;
+        padding: 32px;
+        border-right: solid 1px var(--color-white);
+        @include responsive(phone) {
+          border-bottom: solid 1px var(--color-white);
+          border-right: none;
+        }
+        flex: 1 0 0;
+        h5 {
+          font-size: 24px;
+          margin-bottom: 8px;
+          line-height: 1.5;
+          font-weight: 500;
+          @include responsive(phone) {
+            font-size: 16px;
+          }
+        }
+        p {
+          line-height: 1.4;
+          font-size: 14px;
+          margin-bottom: 16px;
+        }
+        img {
+          margin-bottom: 0;
+          margin-top: auto;
+        }
+        ul {
+          list-style-type: circle;
+          li {
+            line-height: 1.6;
+            font-size: 14px;
+          }
+        }
+      }
+      // .c1 {
+      //   flex: 0.7 0 0;
+      // }
+      .c3 {
+        // padding: 32px;
+        border: none;
+      }
+    }
+  }
+}

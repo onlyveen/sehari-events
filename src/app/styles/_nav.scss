@@ -1,0 +1,207 @@
+#nav {
+  position: fixed;
+  width: 100%;
+  left: 0;
+  z-index: 9;
+  @include responsive(phone) {
+    top: 0;
+  }
+  .container {
+    max-width: 100%;
+    display: flex;
+    padding: 16px 48px;
+    justify-content: space-between;
+    align-items: center;
+    margin: auto;
+    background: linear-gradient(
+      to bottom,
+      rgba(0, 93, 82, 0.8),
+      rgba(0, 93, 82, 0.3)
+    );
+    backdrop-filter: blur(50px);
+    // box-shadow: 0px 4px 15px 0px rgba(0, 0, 0, 0.15);
+    position: relative;
+    @include responsive(phone) {
+      border-radius: 0;
+      flex-wrap: wrap;
+      padding: 8px 32px;
+      height: 80px;
+      transition: all 0.5s ease-in-out;
+      overflow: hidden;
+    }
+
+    &::before {
+      content: "";
+      pointer-events: none;
+      user-select: none;
+      position: absolute;
+      inset: 0px;
+      padding: 1px;
+      background: linear-gradient(
+        rgba(255, 255, 255, 0.1),
+        rgba(255, 255, 255, 0)
+      );
+      -webkit-mask: linear-gradient(black, black) content-box content-box,
+        linear-gradient(black, black);
+      -webkit-mask-composite: xor;
+    }
+    .logo {
+      width: 250px;
+      @include responsive(phone) {
+        height: 40px;
+        width: auto;
+        img {
+          max-width: none;
+          height: 100%;
+        }
+      }
+    }
+    ul {
+      display: flex;
+      list-style-type: none;
+      align-items: center;
+      gap: 64px;
+      justify-content: space-between;
+      @include responsive(phone) {
+        width: 100%;
+        &.soci {
+          padding: 96px 0 64px;
+          justify-content: flex-start;
+          a {
+            display: block;
+          }
+          a,
+          img {
+            height: 40px;
+          }
+        }
+      }
+      li {
+        a {
+          color: #fff;
+          display: flex;
+          align-items: center;
+          font-weight: 500;
+          font-size: 20px;
+          position: relative;
+        }
+      }
+      &.soci {
+        a {
+          height: 30px;
+        }
+      }
+      &.menu {
+        @include responsive(phone) {
+          &.menu {
+            flex-direction: column;
+            padding-top: 64px;
+            li {
+              flex: 1;
+              a {
+                display: flex;
+              }
+            }
+          }
+        }
+        a {
+          @include responsive(phone) {
+            font-size: 24px;
+            font-weight: normal;
+          }
+          &::before {
+            content: "";
+            position: absolute;
+            right: 0;
+            width: 100%;
+            height: 2px;
+            background: #fff;
+            top: 100%;
+            transition: transform 0.25s ease-out 0s;
+            transform-origin: right bottom;
+            transform: scaleX(0);
+          }
+          &:hover {
+            &::before {
+              transform-origin: left bottom;
+              transform: scaleX(1);
+            }
+          }
+        }
+      }
+    }
+    #hamburger {
+      display: none;
+      @include responsive(phone) {
+        display: block;
+      }
+    }
+  }
+  &.opened {
+    .container {
+      height: 100vh;
+    }
+  }
+}
+
+$color: #fff;
+$animation: 500ms;
+$scale: 0.75;
+
+#hamburger {
+  transform: scale($scale) translate(10px);
+  margin-left: auto;
+  position: relative;
+  display: block;
+  transition: all 0.25s;
+  width: 68px;
+  height: 68px;
+  -webkit-touch-callout: none;
+  user-select: none;
+  transform-origin: center right;
+  #top,
+  #bottom {
+    position: absolute;
+    display: block;
+    height: 4px;
+    width: 36px;
+    border-radius: 2px;
+    background: $color;
+    transform-origin: 34px 2px;
+    transform: rotate(0deg);
+    transition: all $animation * (2/3) cubic-bezier(0.8, -1.1, 0.5, 1.9);
+  }
+  #top {
+    top: 19px;
+    left: 14px;
+  }
+  #bottom {
+    top: 41px;
+    left: 14px;
+  }
+
+  path,
+  line {
+    stroke: $color;
+    stroke-linecap: round;
+  }
+  #circle {
+    stroke-dasharray: 1 100 32 300;
+    stroke-dashoffset: 101;
+    transition: all $animation ease;
+  }
+
+  &.is-closed {
+    transform: scale(0.5) translate(10px);
+    #circle {
+      stroke-dasharray: 1 100 190 300;
+      stroke-dashoffset: 1;
+    }
+    #top {
+      transform: translateX(-4.5px) rotate(-45deg);
+    }
+    #bottom {
+      transform: translateX(-4.5px) rotate(45deg);
+    }
+  }
+}

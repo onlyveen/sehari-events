@@ -49,9 +49,7 @@ const Nav = () => {
           <li>
             <a href="#">Team</a>
           </li>
-          <li>
-            <a href="#">Contact</a>
-          </li>
+          
           <li>
             <a className="btn" href="tel:+918500892925">
             Get Quote

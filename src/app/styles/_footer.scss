@@ -25,7 +25,7 @@
     &.griddo{
       padding-bottom: 0;
       @include responsive(phone) {
-        padding: 0 32px;
+        padding: 64px 16px 0;
         .soci{
     
           p,a,span{
@@ -54,7 +54,7 @@
         @include responsive(phone) {
           text-align: center;
           img {
-            width: 70%;
+            width: 100px;
           }
         }
       }

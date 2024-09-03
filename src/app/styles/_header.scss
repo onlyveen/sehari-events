@@ -1,6 +1,11 @@
 #header {
   padding: 0;
-
+  position: relative;
+  overflow: hidden;
+>*{
+  position: relative;
+  z-index: 1;
+}
   .deskOnly{
     display: block;
     @include responsive(phone) {
@@ -11,6 +16,25 @@
     display: none;
     @include responsive(phone) {
       display: block;
+    }
+  }
+  .abs{
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    margin: auto;
+    animation: rot infinite 50s linear;
+    z-index: 0;
+  }
+  @keyframes rot {
+    0%{
+      transform:rotate(0) scale(1);
+    }
+   
+    100%{
+      transform:rotate(360deg) scale(1.5);
     }
   }
   .HContainer {

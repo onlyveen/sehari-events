@@ -51,7 +51,7 @@ const Nav = () => {
           </li>
           
           <li>
-            <a className="btn" href="tel:+918500892925">
+            <a className="btn btn--white" href="tel:+918500892925">
             Get Quote
             </a>
           </li>

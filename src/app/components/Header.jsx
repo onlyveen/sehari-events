@@ -8,6 +8,7 @@ const Header = () => {
       </div>
         <img className="deskOnly" src="./headerLower.png"/>
         <img className="mobOnly" src="./headerLower.svg"/>
+        <img className="abs" src="./headerBG.svg"/>
     </div>
   );
 };

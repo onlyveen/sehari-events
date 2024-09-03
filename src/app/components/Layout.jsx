@@ -12,53 +12,30 @@ const Layout = ({ children }) => {
 
   return (
     <>
-      <Head>
-        <meta
-          name="description"
-          content="Find all your electrical needs at S Enterprises, Visakhapatnam. We offer VFD, switch gear, motors, pumps, Havells, Elmex, Finecab Electricals & more. Visit us at Revenue Ward 60, Visweswaraya Nagar."
-        ></meta>
-        <link rel="icon" href="./favicon.svg" />
+     <Head>
+      {/* Primary Meta Tags */}
+      <meta charset="UTF-8" />
+      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <title>Sehari Events: Your Go-To Event Planning Solution | Bengaluru</title>
+      <meta name="description" content="Sehari Events in Bengaluru offers top-notch event planning services. From birthdays to corporate launches, we bring your vision to life with creativity and precision." />
+      <meta name="keywords" content="Sehari Events, event planning, birthdays, corporate events, Bengaluru, Karnataka, event management, themed parties, social gatherings" />
+      <meta name="robots" content="index, follow" />
+      <link rel="icon" href="./logo-icon.svg" />
 
-        <meta charset="UTF-8" />
+      {/* Open Graph / Facebook Meta Tags */}
+      <meta property="og:type" content="website" />
+      <meta property="og:title" content="Sehari Events: Your Go-To Event Planning Solution | Bengaluru" />
+      <meta property="og:description" content="Sehari Events in Bengaluru offers top-notch event planning services. From birthdays to corporate launches, we bring your vision to life with creativity and precision." />
+      <meta property="og:image" content="/seo.png" />
+      <meta property="og:url" content="https://seharievents.netlify.com" />
 
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-
-        {/* <!-- Primary Meta Tags --> */}
-        <title>
-          S Enterprises: Your Solution for Electrical Needs | VFD, Switch Gear,
-          Motors, Pumps & More
-        </title>
-        <meta
-          name="title"
-          content="Welcome to Sehari Events Website |  olution for all your electrical needs"
-        />
-
-        <meta
-          name="keywords"
-          content="S Enterprises, electrical solutions, VFD, switch gear, motors, pumps, Havells, Elmex, Finecab Electricals, Visakhapatnam, Andhra Pradesh, Sri Nagar, Visweswaraya Nagar, D Mart"
-        />
-        <meta name="robots" content="index, follow" />
-
-        {/* <!-- Open Graph / Facebook Tags--> */}
-        <meta property="og:type" content="website" />
-        <meta
-          property="og:title"
-          content="Welcome to Sehari Events Website | Solution for all your electrical needs"
-        />
-        <meta
-          property="og:description"
-          content="Find all your electrical needs at S Enterprises, Visakhapatnam. We offer VFD, switch gear, motors, pumps, Havells, Elmex, Finecab Electricals & more. Visit us at Revenue Ward 60, Visweswaraya Nagar."
-        />
-
-        <meta property="og:image" content="/seo.jpg" />
-        <meta property="og:url" content="https://senterprises.netlify.com" />
-
-        <meta name="twitter:image" content="/seo.jpg" />
-        <meta
-          property="twitter:url"
-          content="https://senterprises.netlify.com"
-        />
-      </Head>
+      {/* Twitter Meta Tags */}
+      <meta name="twitter:card" content="summary_large_image" />
+      <meta name="twitter:title" content="Sehari Events: Your Go-To Event Planning Solution | Bengaluru" />
+      <meta name="twitter:description" content="Sehari Events in Bengaluru offers top-notch event planning services. From birthdays to corporate launches, we bring your vision to life with creativity and precision." />
+      <meta name="twitter:image" content="/seo.png" />
+      <meta name="twitter:url" content="https://seharievents.netlify.com" />
+    </Head>
       <main id="page">
         <Nav></Nav>
         <div className="content">{children}</div>

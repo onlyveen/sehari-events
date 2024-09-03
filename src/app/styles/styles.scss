@@ -191,12 +191,18 @@ h3.title{
   font-size: 32px;
   font-family: var(--font-heading);
   color: #fff;
+   @include responsive(phone) {
+    font-size: 24px;
+  }
 }
 h3.ltitle{
   font-size: 32px;
   font-weight: bold;
   font-family: var(--font-heading);
   color: var(--color-purple);
+   @include responsive(phone) {
+    font-size: 24px;
+  }
 }
 .topMost {
   padding-top: 200px;

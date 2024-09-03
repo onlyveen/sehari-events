@@ -4,7 +4,10 @@
     color: var(--color-text-black);
     background: var(--color-light-grad);
     @include responsive(phone) {
-      padding: 50px 0;
+      padding: 100px 0;
+      .container{
+        padding: 0;
+      }
     }
     .aligner{
         text-align: center;
@@ -15,12 +18,24 @@
         p{
             max-width: 60%;
             margin-top: 16px;
+            @include responsive(phone) {
+                font-size: 14px;
+                max-width: 90%;
+              }
         }
     }      
     .testimonial-cards {
       
         columns: 3;
         gap: 32px;
+        @include responsive(phone) {
+            display: flex;
+            max-width: 100%;
+            overflow: auto;
+            padding: 0 32px;
+            align-items: flex-start;
+          }
+        
         
         .testimonial-card {
             background-color: white;
@@ -35,6 +50,14 @@
             -o-break-inside:avoid;
             -ms-break-inside:avoid;
             break-inside:avoid;
+
+            @include responsive(phone) {
+                padding: 24px;
+                border: solid 1px #fff;
+                flex: unset;
+                min-width: 80%;
+                width: 80%;
+              }
         }
         .person{
             display: flex;
@@ -55,11 +78,17 @@
             font-weight: 600;
             font-size: 1.2em;
             margin-bottom: 15px;
+            @include responsive(phone) {
+                font-size: 14px;
+            }
         }
         
         .testimonial-card p {
             font-size: 14px;
             line-height: 1.5;
+            @include responsive(phone) {
+                font-size: 13px;
+            }
         }
     }     
 }

@@ -1,7 +1,7 @@
 #About {
   padding: 150px 0;
   @include responsive(phone) {
-    padding: 50px 0;
+    padding: 100px 0;
   }
   .aboutText {
     padding: 50px 0 ;
@@ -9,13 +9,17 @@
     text-align: center;
     @include responsive(phone) {
       margin-top: 0;
-      padding: 0px 0 150px;
+      // padding: 0px 0 150px;
     }
     p{
       margin: 24px auto;
       max-width: 60%;
       font-size: 16px;
       line-height: 1.6;
+      @include responsive(phone) {
+        font-size: 14px;
+        max-width: 90%;
+      }
     }
     .typing-text{
       color: var(--color-lav-purple);
@@ -27,6 +31,9 @@
     align-items: center;
     flex-wrap: wrap;
     justify-content: center;
+    @include responsive(phone) {
+      flex-direction: column;
+    }
     .serviceItem{
       width: calc(33.333% - 48px * 3/2);
       background-repeat: no-repeat;
@@ -40,6 +47,9 @@
       color: var(--color-text-black);
       gap: 12px;
       position: relative;
+      @include responsive(phone) {
+        width: 90%;
+      }
       >*{
         z-index: 1;
         position: relative;

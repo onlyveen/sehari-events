@@ -30,7 +30,7 @@ const Layout = ({ children }) => {
         </title>
         <meta
           name="title"
-          content="Welcome to S Enterprisess Website |  olution for all your electrical needs"
+          content="Welcome to Sehari Events Website |  olution for all your electrical needs"
         />
 
         <meta
@@ -43,7 +43,7 @@ const Layout = ({ children }) => {
         <meta property="og:type" content="website" />
         <meta
           property="og:title"
-          content="Welcome to S Enterprisess Website | Solution for all your electrical needs"
+          content="Welcome to Sehari Events Website | Solution for all your electrical needs"
         />
         <meta
           property="og:description"

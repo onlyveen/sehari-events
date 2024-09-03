@@ -6,7 +6,7 @@ const Nav = () => {
     <div id="nav" className={`navbar ${navOpen ? "opened" : "closed"}`}>
       <div className="container">
         <a href="/#home" className="logo">
-          <img src="/logo.svg" alt="S Enterprisess" />
+          <img src="/logo.svg" alt="Sehari Events" />
         </a>
         <div
           id="hamburger"
@@ -38,35 +38,27 @@ const Nav = () => {
         </div>
         <ul className="menu" onClick={() => setNavOpen(false)}>
           <li>
-            <a href="/#products">Products</a>
+            <a href="/#About">About us</a>
           </li>
           <li>
-            <a href="/#About">About</a>
+            <a href="/#Why">Why us</a>
           </li>
-
+          <li>
+            <a href="/#Portfolio">Portfolio</a>
+          </li>
+          <li>
+            <a href="#">Team</a>
+          </li>
+          <li>
+            <a href="#">Contact</a>
+          </li>
           <li>
             <a className="btn" href="tel:+918500892925">
-              Contact
+            Get Quote
             </a>
           </li>
         </ul>
-        {/* <ul className="soci">
-          <li>
-            <a href="https://maps.app.goo.gl/kkUpTRLgvxX5Nmh1A" target="_blank">
-              <img src="pin.svg" alt="Address | S Enterprisess" />
-            </a>
-          </li>
-          <li>
-            <a href="mailto:SEnterprises0023@gmail.com">
-              <img src="mail_ico.svg" alt="Email | S Enterprisess" />
-            </a>
-          </li>
-          <li>
-            <a href="tel:+918500892925">
-              <img src="call_ico.svg" alt="Call | S Enterprisess" />
-            </a>
-          </li>
-        </ul> */}
+     
       </div>
     </div>
   );

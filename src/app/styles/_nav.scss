@@ -13,11 +13,7 @@
     justify-content: space-between;
     align-items: center;
     margin: auto;
-    background: linear-gradient(
-      to bottom,
-      rgba(0, 93, 82, 0.8),
-      rgba(0, 93, 82, 0.3)
-    );
+    background: rgba(0, 0, 0, 0.7);
     backdrop-filter: blur(50px);
     // box-shadow: 0px 4px 15px 0px rgba(0, 0, 0, 0.15);
     position: relative;
@@ -46,21 +42,21 @@
       -webkit-mask-composite: xor;
     }
     .logo {
-      width: 250px;
+      height: 60px;
+      img {
+        max-width: none;
+        height: 100%;
+      }
       @include responsive(phone) {
         height: 40px;
         width: auto;
-        img {
-          max-width: none;
-          height: 100%;
-        }
       }
     }
     ul {
       display: flex;
       list-style-type: none;
       align-items: center;
-      gap: 64px;
+      gap: 32px;
       justify-content: space-between;
       @include responsive(phone) {
         width: 100%;
@@ -82,7 +78,7 @@
           display: flex;
           align-items: center;
           font-weight: 500;
-          font-size: 20px;
+          font-size: 16px;
           position: relative;
         }
       }
@@ -109,7 +105,7 @@
             font-size: 24px;
             font-weight: normal;
           }
-          &::before {
+          &:not(.btn)::before {
             content: "";
             position: absolute;
             right: 0;

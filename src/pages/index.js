@@ -4,9 +4,11 @@ import Layout from "../app/components/Layout";
 
 import React, { useState } from "react";
 import { PlayerContext } from "../app/context/PlayerContext";
+import WhySection from "../app/components/WhySection";
+import Portfolio from "../app/components/Portfolio";
+import Testimonials from "../app/components/Testimonials";
 
-import Contact from "../app/components/Contact";
-import Products from "../app/components/Products";
+
 
 const index = ({ url }) => {
   const [playerStatus, setPlayerStatus] = useState({});
@@ -17,8 +19,9 @@ const index = ({ url }) => {
         <Layout>
           <Header />
           <About />
-          <Products />
-          {/* <Contact /> */}
+          <WhySection/>
+          <Portfolio/>
+          <Testimonials/>
         </Layout>
       </PlayerContext.Provider>
     </>

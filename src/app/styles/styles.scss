@@ -22,7 +22,7 @@
   --color-blue: #2F7CEA;
   --color-green: #62D18A;
   --color-yellow: #EAAC38;
-  --color-light-grad: linear-gradient(#FFFFFF 0%,#EBE6F2 25%,#E2D0FF 100%);
+  --color-light-grad: linear-gradient(var(--color-white) 0%,#EBE6F2 25%,#E2D0FF 100%);
   --color-colored-grad: linear-gradient(#8C54E0,#3B0D80);
 }
 html,
@@ -175,7 +175,7 @@ html {
 
 body {
   background: var(--color-text-black);
-  color: #fff;
+  color: var(--color-white);
   font-family: var(--font);
 }
 img {
@@ -190,7 +190,7 @@ a {
 h3.title{
   font-size: 32px;
   font-family: var(--font-heading);
-  color: #fff;
+  color: var(--color-white);
    @include responsive(phone) {
     font-size: 24px;
   }
@@ -315,7 +315,7 @@ button {
       content: "";
       height: 75%;
       width: 1px;
-      background: #fff;
+      background: var(--color-white);
       position: absolute;
       left: 0;
       right: 0;
@@ -345,7 +345,7 @@ button {
     -webkit-mask-composite: xor;
   }
   .modalWala {
-    background: #fff;
+    background: var(--color-white);
     padding: 32px;
     width: 80vw;
     height: 40vw;

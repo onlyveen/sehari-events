@@ -50,7 +50,7 @@
       overflow: hidden;
       @include responsive(phone) {
         width: 90%;
-        background: #fff;
+        background: var(--color-white);
       }
       @include responsive(tablet) {
         padding: 25px 50px;

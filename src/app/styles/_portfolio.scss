@@ -1,48 +1,32 @@
 #Portfolio{
-    padding: 150px 0 24px;
-    background: #fff;
-    color: var(--color-text-black);
-    @include responsive(phone) {
-      padding: 100px 0;
-    }
-    .aligner{
-        text-align: center;
-        display: flex;
-        flex-direction: column;
-        margin-bottom: 64px;
-        align-items: center;
-        p{
-            max-width: 60%;
-            margin-top: 32px;
-            @include responsive(phone) {
-              font-size: 14px;
-              max-width: 90%;
-            }
-        }
-    }
-    .marquee {
-        display: flex;
-        white-space: nowrap;
-        will-change: transform;
-        animation: marquee 20s linear infinite;
-        .marquee-content {
-          display: flex;
-        }
-        
-        .marquee-image {
-          width: auto; 
-          height: 300px; 
-          margin-right: 10px; 
-        }
-        
-        @keyframes marquee {
-          from {
-            transform: translateX(0%);
-          }
-          to {
-            transform: translateX(-100%);
-          }
+  padding: 150px 0 24px;
+  background: var(--color-white);
+  color: var(--color-text-black);
+  @include responsive(phone) {
+    padding: 100px 0;
+  }
+  .aligner{
+      text-align: center;
+      display: flex;
+      flex-direction: column;
+      margin-bottom: 64px;
+      align-items: center;
+      p{
+        max-width: 60%;
+        margin-top: 32px;
+        @include responsive(phone) {
+          font-size: 14px;
+          max-width: 90%;
         }
       }
-
+  }
+  .slick-list{
+    height: 350px;
+    .slick-track{
+      .slick-slide{
+        padding: 0 8px;
+        cursor: grab;
+      }
+    }
+  }
 }

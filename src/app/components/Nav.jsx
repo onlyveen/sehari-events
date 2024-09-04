@@ -1,6 +1,19 @@
-import React, { useState } from "react";
 
-const Nav = () => {
+import React, { useEffect, useState } from 'react';
+import { fetchLinks } from './links';
+  
+  const Nav = () => {
+  const [links, setLinks] = useState({});
+
+
+  useEffect(() => {
+    const getLinks = async () => {
+      const data = await fetchLinks();
+      setLinks(data);
+    };
+
+    getLinks();
+  }, []);
   const [navOpen, setNavOpen] = useState(false);
   return (
     <div id="nav" className={`navbar ${navOpen ? "opened" : "closed"}`}>
@@ -51,7 +64,7 @@ const Nav = () => {
           </li>
           
           <li>
-            <a className="btn btn--white" href="tel:+918500892925">
+            <a className="btn btn--white" href={`tel:+91${links.phone?.value}`}>
             Get Quote
             </a>
           </li>

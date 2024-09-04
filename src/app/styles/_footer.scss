@@ -36,7 +36,7 @@
     }
     display: flex;
     gap: 64px;
-    color: #fff;
+    color: var(--color-white);
     @include responsive(phone) {
       flex-direction: column;
     }

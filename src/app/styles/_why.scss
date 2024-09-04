@@ -28,7 +28,7 @@
             flex: .25 0 0;
             @include responsive(phone) {
               padding: 24px;
-              border: solid 1px #fff;
+              border: solid 1px var(--color-white);
               flex: unset;
               min-width: 70%;
               width: 70%;

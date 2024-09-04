@@ -1,4 +1,5 @@
 import React from 'react';
+import ImageCarousel from './ImageCarousel';
 
 const Portfolio = () => {
     const images = [
@@ -20,18 +21,9 @@ const Portfolio = () => {
                     <h3 className='ltitle'>Our Portfolio</h3>
                     <p>Explore some of the small-scale events we’ve had the pleasure of organizing. Our portfolio showcases the diversity and creativity of our work, reflecting the special moments we’ve helped create.</p>
                 </div>
-                <div className="marquee">
-                    <div className="marquee-content">
-                        {images.map((image, index) => (
-                            <img key={index} src={image} alt={`marquee-img-${index}`} className="marquee-image" />
-                        ))}
-                        {/* Duplicate images to create the infinite effect */}
-                        {images.map((image, index) => (
-                            <img key={`duplicate-${index}`} src={image} alt={`marquee-img-duplicate-${index}`} className="marquee-image" />
-                        ))}
-                    </div>
-                </div>
+             
             </div>
+            <ImageCarousel/>
         </div>
     );
 };

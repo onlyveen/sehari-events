@@ -1,0 +1,84 @@
+#Team{
+
+    padding: 150px 0 ;
+    background: var(--color-white);
+    color: var(--color-text-black);
+    @include responsive(phone) {
+      padding: 100px 0;
+    }
+    .aligner{
+        text-align: center;
+        display: flex;
+        flex-direction: column;
+        margin-bottom: 64px;
+        align-items: center;
+        p{
+          max-width: 60%;
+          margin-top: 32px;
+          @include responsive(phone) {
+            font-size: 14px;
+            max-width: 90%;
+          }
+        }
+    }
+    .team-grid{
+        display: flex;
+        gap: 32px;
+        margin-top: 100px;
+        @include responsive(phone) {
+            flex-wrap: wrap;
+            justify-content: center;
+            gap:  64px 16px;
+          }
+        .team-member{
+            position: relative;
+            &:nth-child(1){
+                color: var(--color-crimosn);
+            }
+            &:nth-child(2){
+                color: var(--color-lavander);
+                transform: translateY(10%);
+            }
+            &:nth-child(3){
+                color: var(--color-blue);
+                transform: translateY(-10%);
+            }
+            &:nth-child(4){
+                color: var(--color-green);
+                transform: translateY(-5%);
+            }
+            &:nth-child(5){
+                color: var(--color-yellow);
+                transform: translateY(-10%);
+            }
+            @include responsive(phone) {
+                transform: none !important;
+                width: calc(50% - 16px/2);
+            }
+       
+            p{
+                font-size: 2.5vw;
+                position: absolute;
+                top: 25px;
+                right: 0;
+                left: 0;
+                text-align: center;
+                transform: rotate(-10deg);
+                font-family: var(--font-brush);
+                line-height: .85;
+                color: #fff;
+                word-spacing: 100vw;
+                @include responsive(phone) {
+                    font-size: 3vh;
+                  }
+            }
+            h4{
+                font-size: 24px;
+                text-align: center;
+                font-weight: 600;
+                line-height: 1.3;
+            }
+        }
+    }
+    }
+      

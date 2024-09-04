@@ -60,7 +60,7 @@ import { fetchLinks } from './links';
             <a href="/#Portfolio">Portfolio</a>
           </li>
           <li>
-            <a href="#">Team</a>
+            <a href="#Team">Team</a>
           </li>
           
           <li>

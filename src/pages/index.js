@@ -7,6 +7,7 @@ import { PlayerContext } from "../app/context/PlayerContext";
 import WhySection from "../app/components/WhySection";
 import Portfolio from "../app/components/Portfolio";
 import Testimonials from "../app/components/Testimonials";
+import Team from "../app/components/Team";
 
 
 
@@ -22,6 +23,7 @@ const index = ({ url }) => {
           <WhySection/>
           <Portfolio/>
           <Testimonials/>
+          <Team/>
         </Layout>
       </PlayerContext.Provider>
     </>

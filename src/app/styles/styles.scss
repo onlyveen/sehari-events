@@ -269,6 +269,11 @@ button {
       color: var(--color-white) !important;
     }
   }
+  &.btn--large {
+    height: 65px;
+    font-size: 24px;
+
+  }
 }
 
 .theTitle {

@@ -15,6 +15,7 @@ import { fetchLinks } from './links';
     getLinks();
   }, []);
   const [navOpen, setNavOpen] = useState(false);
+  
   return (
     <div id="nav" className={`navbar ${navOpen ? "opened" : "closed"}`}>
       <div className="container">

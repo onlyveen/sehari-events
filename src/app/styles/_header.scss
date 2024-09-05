@@ -2,6 +2,7 @@
   padding: 0;
   position: relative;
   overflow: hidden;
+  background: var(--color-dark-purple);
 >*{
   position: relative;
   z-index: 1;
@@ -27,6 +28,7 @@
     margin: auto;
     animation: rot infinite 50s linear;
     z-index: 0;
+    display: none;
   }
   @keyframes rot {
     0%{

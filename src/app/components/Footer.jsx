@@ -18,6 +18,8 @@ const Footer = () => {
   return (
     <div id="Footer">
       <div className="footTop">
+      <img className="goldern" src="./golden-balloons.png" />
+      <img className="ribbon" src="./ribbon.png" />
         <div className="container">
           <h3 className="title">Let’s Celebrate Together 🎉</h3>
           <p>Ready to plan your next small-scale event? Contact us today, and let’s start working on a celebration that you and your guests will remember fondly. No matter the size of your gathering, we’re here to make it special.</p>

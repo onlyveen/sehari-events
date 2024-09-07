@@ -1,6 +1,33 @@
 #Footer {
   background: var(--color-dark-purple);
+  
   .footTop{
+    position: relative;
+    .goldern{
+      position: absolute;
+      z-index: 0;
+      width: 150px;
+      bottom: 0%;
+      left: 0%;
+      transform: rotate(15deg);
+      z-index: 2;
+      @include responsive(phone) {
+        width: 75px;
+        transform: rotate(25deg);
+      }
+    }
+    .ribbon{
+      position: absolute;
+      z-index: 0;
+      width: 100px;
+      top: 0%;
+      right: 20%;
+      transform: rotate(15deg);
+      z-index: 2;
+      @include responsive(phone) {
+        width: 75px;
+      }
+    }
     background: var(--color-colored-grad);
     .container{
       flex-direction: column;

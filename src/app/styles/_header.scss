@@ -7,23 +7,22 @@
   display: flex;
   flex-direction: column;
   justify-content: space-between;
->*{
-  position: relative;
-  z-index: 1;
-}
-  .deskOnly{
-    display: block;
+  > * {
+    position: relative;
+    z-index: 1;
+  }
+  .lower {
+    width: 50%;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    transform: rotateY(180deg);
     @include responsive(phone) {
-      display: none;
+      transform: rotateY(0deg);
+      width: 100%;
     }
   }
-  .mobOnly{
-    display: none;
-    @include responsive(phone) {
-      display: block;
-    }
-  }
-  .abs{
+  .abs {
     position: absolute;
     top: 0;
     right: 0;
@@ -35,48 +34,79 @@
     display: none;
   }
   @keyframes rot {
-    0%{
-      transform:rotate(0) scale(1);
+    0% {
+      transform: rotate(0) scale(1);
     }
-   
-    100%{
-      transform:rotate(360deg) scale(1.5);
+
+    100% {
+      transform: rotate(360deg) scale(1.5);
     }
   }
   .HContainer {
     display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 32px;
+    align-items: flex-start;
     padding: 250px 0 100px;
-    justify-content: space-between;
-    text-align: center;
     @include responsive(phone) {
       flex-direction: column;
       padding: 150px 0 50px;
-      p{
-        display: inline-block;
-      }
     }
-    >p{
-      font-size: 18px;
-      font-weight: normal;
-      line-height: 1.5;
-      max-width: 70%;
+    .right {
+      min-width: 30%;
+      max-width: 30%;
+      img {
+        transform: scale(1.3);
+      }
       @include responsive(phone) {
+        width: 100%;
+        min-width: 100%;
         max-width: 100%;
+        text-align: center;
+        padding-top: 48px;
+        img {
+          transform: scale(1);
+          width: 60%;
+        }
       }
     }
-    h1{
-      font-size: 48px;
-      line-height: 1.3;
-      font-family: var(--font-heading);
+    .left {
+      display: flex;
+      flex-direction: column;
+      gap: 32px;
+      padding-right: 65px;
+      align-items: flex-start;
+      justify-content: space-between;
       @include responsive(phone) {
-        font-size: 32px;
-        padding: 32px;
+        padding: 0;
+        text-align: center;
+        align-items: center;
       }
-      >p{
-        color: var(--color-lav-purple);
+      > p {
+        font-size: 18px;
+        font-weight: normal;
+        line-height: 1.5;
+        max-width: 70%;
+        @include responsive(phone) {
+          max-width: 100%;
+        }
+      }
+      .btn {
+        display: inline-flex !important;
+      }
+      h1 {
+        font-size: 64px;
+        line-height: 1.3;
+        font-family: var(--font-heading);
+        @include responsive(phone) {
+          font-size: 32px;
+          padding: 32px;
+        }
+        > p {
+          display: inline-block;
+          color: var(--color-golden-yellow);
+          &.prp {
+            color: var(--color-lav-purple);
+          }
+        }
       }
     }
   }

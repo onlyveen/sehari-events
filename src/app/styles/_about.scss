@@ -1,5 +1,23 @@
 #About {
   padding: 150px 0;
+  position: relative;
+  &::before{
+    content: '';
+    position: absolute;
+    left: 0;
+    width: 100%;
+    top: 0;
+    z-index: 0;
+    height: 100%;
+    background: url('../../../public/patter.png') center;
+    background-size: 350px;
+    opacity: .35;
+    filter: grayscale(1);
+  }
+  >*{
+    position: relative;
+    z-index: 1;
+  }
   @include responsive(phone) {
     padding: 100px 0;
   }
@@ -22,7 +40,7 @@
       }
     }
     .typing-text{
-      color: var(--color-lav-purple);
+      color: var(--color-golden-yellow);
     }
   }
   .serviceItems{
@@ -32,7 +50,9 @@
     flex-wrap: wrap;
     justify-content: center;
     @include responsive(phone) {
-      flex-direction: column;
+      flex-wrap: wrap;
+      gap: 24px;
+      align-items: stretch;
     }
     .serviceItem{
       width: calc(33.333% - 48px * 3/2);
@@ -49,8 +69,13 @@
       position: relative;
       overflow: hidden;
       @include responsive(phone) {
-        width: 90%;
+        width: calc(50% - 12px);
+        padding: 16px;
+        border-radius: 16px;
         background: var(--color-white);
+        &:last-child{
+          width: 100%;
+        }
       }
       @include responsive(tablet) {
         padding: 25px 50px;

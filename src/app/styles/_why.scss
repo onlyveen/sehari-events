@@ -2,6 +2,28 @@
     background: url('../../../public/swirlbg.svg') no-repeat center;
     background-size: cover;
     padding: 150px;
+    position: relative;
+    .star,.heart{
+      width: 150px;
+      position: absolute;
+      left: 5%;
+      top: 10%;
+      @include responsive(phone) {
+        width: 75px;
+      }
+    }
+    .heart{
+      width: 100px;
+      bottom: 5%;
+      right: 5%;
+      left: auto;
+      top: auto;
+      transform: rotate(15deg);
+      @include responsive(phone) {
+        width: 50px;
+        bottom: 0;
+      }
+    }
     @include responsive(phone) {
       padding: 100px 0;
       .container{

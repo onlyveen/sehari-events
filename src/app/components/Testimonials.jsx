@@ -38,6 +38,8 @@ const testimonials = [
 const Testimonials = () => {
   return (
     <div className="testimonials">
+     <img className="goldern" src="./golden-balloons.png" />
+     <img className="purple" src="./purple-balloons.png" />
       <div className='container'>
         <div className='aligner'>
           <h3 className='ltitle'>Clients cheer for Us</h3>

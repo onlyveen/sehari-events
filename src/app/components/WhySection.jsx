@@ -23,6 +23,8 @@ const WhySection = () => {
 
   return (
     <div id="Why">
+      <img className="star" src="./star.png" />
+      <img className="heart" src="./heart.png" />
       <div className="whyText" >
         <div className="container">
           <h3 className="title">

@@ -54,6 +54,9 @@
     @include responsive(phone) {
       flex-direction: column;
       padding: 150px 0 50px;
+      br{
+        display: none;
+      }
     }
     >p{
       font-size: 18px;

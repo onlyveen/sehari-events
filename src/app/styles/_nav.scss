@@ -18,8 +18,8 @@
     justify-content: space-between;
     align-items: center;
     margin: auto;
-    background: rgba(14, 8, 45, .75);
-    backdrop-filter: blur(50px);
+    background: rgba(14, 8, 45, .5);
+    backdrop-filter: blur(5px);
     position: relative;
     @include responsive(phone) {
       max-width: 90%;

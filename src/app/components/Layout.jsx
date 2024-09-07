@@ -1,4 +1,4 @@
-import React, { useContext } from "react";
+import React, { useContext,useState,useEffect } from "react";
 import Nav from "./Nav";
 import Footer from "./Footer";
 import "../styles/styles.scss";
@@ -6,9 +6,35 @@ import ModalPlayer from "./ModalPlayer";
 import { PlayerContext } from "../context/PlayerContext";
 import Head from "next/head";
 
+import Confetti from 'react-confetti'
+
 const Layout = ({ children }) => {
   const { playerStatus, setPlayerStatus } = useContext(PlayerContext);
-  console.log(playerStatus);
+  const [windowSize, setWindowSize] = useState({
+    width: 0,  // Initialize with default values
+    height: 0,
+  });
+
+  useEffect(() => {
+    // Check if window is defined to ensure code runs only on the client
+    if (typeof window !== 'undefined') {
+      const handleResize = () => {
+        setWindowSize({
+          width: window.innerWidth,
+          height: window.innerHeight,
+        });
+      };
+
+      // Set initial size
+      handleResize();
+
+      // Add event listener to update size on resize
+      window.addEventListener('resize', handleResize);
+
+      // Cleanup the event listener on component unmount
+      return () => window.removeEventListener('resize', handleResize);
+    }
+  }, []);
 
   return (
     <>
@@ -36,6 +62,17 @@ const Layout = ({ children }) => {
       <meta name="twitter:image" content="/seo.png" />
       <meta name="twitter:url" content="https://seharievents.netlify.com" />
     </Head>
+    <Confetti
+      width={windowSize.width}
+      numberOfPieces={50}
+      height={windowSize.height}
+      gravity={0.02}
+      colors={["#E84779",
+        "#A856A8",
+        "#2F7CEA",
+        "#62D18A",
+        "#EAAC38",]}
+    />
       <main id="page">
         <Nav></Nav>
         <div className="content">{children}</div>

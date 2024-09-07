@@ -1,41 +1,56 @@
-import React from 'react';
+import React,{useState, useEffect} from 'react';
+import axios from 'axios';
+
+const AIRTABLE_PERSONAL_TOKEN = process.env.REACT_APP_AIRTABLE_PERSONAL_TOKEN || 'patF76yxaxs4gCjjt.0d557c56a243c1ed7c078db22e33edfe1c21dbe248dc9ad8eb0010135eaeb922';
+const BASE_ID = 'appoH5SKOx6sP0tkO';
+const TESTIMONIALS_TABLE_NAME = 'testimonials';
 
 
-const testimonials = [
-  {
-    name: "Vyadi Svanisri",
-    image: "./papa.png", 
-    text: `"I am more vocal about my thoughts and never confined to a team. With remote working and unquestioned infinite leaves, it is helping me be an excellent professional and a homemaker. AntStack lets me experiment, learn and enjoy my career!"`,
-  },
-  {
-    name: "Vyadi Svanisri",
-    image: "./papa.png", 
-    text: `"AntStack culture believes in nurturing every individual and growing together as a family. it is helping me be an excellent professional and a homemaker. AntStack lets me experiment, learn and enjoy my career!"`,
-  },
-  {
-    name: "Vyadi Svanisri",
-    image: "./papa.png", 
-    text: `"in nurturing every individual and growing together as a family. With a flat in nurturing every individual and growing together as a family. With a flat culture believes in nurturing every individual and growing together as a family.. AntStack lets me experiment, learn and enjoy my career!"`,
-  },
-  {
-    name: "Vyadi Svanisri",
-    image: "./papa.png", 
-    text: `"AntStack culture in nurturing every individual and growing together as a family. With a flat believlearn and enjoy my career!"`,
-  },
-  {
-    name: "Vyadi Svanisri",
-    image: "./papa.png", 
-    text: `"AntStack culture believes in nurturing every individual and growing together as a family. With a flat AntStack lets me experiment, learn and enjoy my career!"`,
-  },
-  {
-    name: "Vyadi Svanisri",
-    image: "./papa.png", 
-    text: `"AntStack culture believes in nurturing every individual and growing together as a family. With a flat organization structure, I am more vocal about my thoughts and never confined to a team. With remote working and unquestioned infinite leaves, it is helping me be an excellent professional and a homemaker. AntStack lets me experiment, learn and enjoy my career!"`,
-  },
-  
-];
+const fetchtesTimonials = async () => {
+  const url = `https://api.airtable.com/v0/${BASE_ID}/${TESTIMONIALS_TABLE_NAME}`;
+
+  try {
+    const response = await axios.get(url, {
+      headers: {
+        Authorization: `Bearer ${AIRTABLE_PERSONAL_TOKEN}`,
+      },
+    });
+
+    const records = response.data.records;
+
+    // Map through the records and extract the relevant fields
+    let testimonials = records.map(record => ({
+      name: record.fields.name || '',
+      text: record.fields.text || '',
+      image: record.fields.image ? record.fields.image[0].url : null, // Access the image URL
+      order: record.fields.order || 0, // Access the order field, default to 0 if not present
+    }));
+
+    // Sort the testimonials array by the order field
+    testimonials.sort((a, b) => a.order - b.order);
+
+    return testimonials;
+  } catch (error) {
+    console.error('Error fetching testimonials from Airtable:', error);
+    return [];
+  }
+};
+
 
 const Testimonials = () => {
+
+  const [testimonials, setTestimonials] = useState([]);
+
+  useEffect(() => {
+    const getTestimonials = async () => {
+      const data = await fetchtesTimonials();
+      setTestimonials(data);
+    };
+
+    getTestimonials();
+  }, []);
+
+  console.log(testimonials)
   return (
     <div className="testimonials">
      <img className="goldern" src="./golden-balloons.png" />

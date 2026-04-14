@@ -104,7 +104,30 @@
             font-weight: 200;
           }
         }
-       
+        .made-by {
+          margin-top: 20px;
+          font-weight: 200;
+          line-height: 1.6;
+          color: rgba(255,255,255,0.5);
+
+          a {
+            font-weight: 600;
+            background: linear-gradient(90deg, #8C54E0, #3B0D80, #fff, #fff, #8C54E0, #3B0D80);
+            background-size: 200% auto;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            text-decoration: none;
+            animation: shimmer 3s linear infinite;
+            &:hover {
+              opacity: 0.8;
+            }
+          }
+        }
+        @keyframes shimmer {
+          0% { background-position: 0% center; }
+          100% { background-position: 200% center; }
+        }
       }
       &.soci {
         flex: 1 0 0;

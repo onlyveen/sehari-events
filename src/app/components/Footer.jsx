@@ -37,6 +37,7 @@ const Footer = () => {
             <li><a href="">Portofolio</a></li>
             <li><a href="">Team</a></li>
           </ul>
+          <p className="made-by"><span className="made-by__label">Made by</span> <a href="https://praveengorakala.com" target="_blank" rel="noopener noreferrer">praveengorakala.com</a></p>
         </div>
         <div className="cols info">
           <h3>Support</h3>
